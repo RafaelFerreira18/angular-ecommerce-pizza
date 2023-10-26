@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Italiana', sans-serif;
+}
+body{
+    background-color: #F2E8CF;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
