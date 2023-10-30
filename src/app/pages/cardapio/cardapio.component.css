@@ -1,0 +1,10 @@
+.cardapio-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 200px;
+    margin-top: 200px;
+}
+
+app-pizza-card{
+    margin-bottom: 50px;
+}

@@ -8,7 +8,35 @@
         </ul>
     </div>
     <div class="menu-bar-icons">
-        <i class="fa-solid fa-cart-shopping"></i>
+        <i class="fa-solid fa-cart-shopping" id="cart" (click)="openCart=!openCart"></i>
         <i class="fa-solid fa-user"></i>
+    </div>
+</div>
+
+
+<div class="cart">
+    <div class="cart-content shadow-sm" [class.show]="openCart">
+        <div class="cart-exit">
+            <i class="fa-solid fa-trash" style="color: #e00b0b;" (click)="deleteCart()"></i>
+            <i class="fa-solid fa-circle-xmark" style="color: #e00b0b;" (click)="openCart=!openCart"></i>
+        </div>
+        <div class="small-pizza-card">
+            <div class="small-pizza-card-name-price">
+                <h4>Di Karlotta</h4>
+                <span class="small-pizza-card-price">R$79,90</span>
+            </div>
+            <div class="small-pizza-card-image">
+                <img src="assets/images/pizza-image-placeholder.png" alt="">
+            </div>
+        </div>
+        <div class="small-pizza-card">
+            <div class="small-pizza-card-name-price">
+                <span>Di Karlotta</span>
+                <span class="small-pizza-card-price">R$79,90</span>
+            </div>
+            <div class="small-pizza-card-image">
+                <img src="assets/images/pizza-image-placeholder.png" alt="">
+            </div>
+        </div>
     </div>
 </div>

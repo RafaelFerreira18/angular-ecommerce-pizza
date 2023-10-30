@@ -14,7 +14,7 @@ import { PizzaCardComponent } from './components/pizza-card/pizza-card.component
     MenuBarComponent,
     HomeComponent,
     CardapioComponent,
-    PizzaCardComponent
+    PizzaCardComponent,
   ],
   imports: [
     BrowserModule,

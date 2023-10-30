@@ -1,1 +1,3 @@
-<p>cardapio works!</p>
+<div class="cardapio-container">
+    <app-pizza-card *ngFor="let p of pizzasArray, let i=index" [pizza]="pizzasArray[i]"></app-pizza-card>
+</div>
