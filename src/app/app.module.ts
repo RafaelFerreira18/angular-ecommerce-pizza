@@ -7,6 +7,7 @@ import { MenuBarComponent } from './components/menu-bar/menu-bar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CardapioComponent } from './pages/cardapio/cardapio.component';
 import { PizzaCardComponent } from './components/pizza-card/pizza-card.component';
+import { SmallPizzaCardComponent } from './components/menu-bar/small-pizza-card/small-pizza-card.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { PizzaCardComponent } from './components/pizza-card/pizza-card.component
     HomeComponent,
     CardapioComponent,
     PizzaCardComponent,
+    SmallPizzaCardComponent,
   ],
   imports: [
     BrowserModule,

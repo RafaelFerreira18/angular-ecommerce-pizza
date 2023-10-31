@@ -5,12 +5,12 @@
             <p>{{pizza.description}}</p>
         </div>
         <div class="pizza-image">
-            <img src="assets/images/pizza-image-placeholder.png" alt="">
+            <img src="assets/images/pizza-image-placeholder.png" alt={{pizza.name}}>
         </div>
     </div>
     <hr>
     <div class="pizza-price-cart">
         <span>R${{pizza.price}}</span>
-        <i class="fa-solid fa-plus"></i>
+        <i class="fa-solid fa-plus" (click)="addToCart()"></i>
     </div>
 </div>

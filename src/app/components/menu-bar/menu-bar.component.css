@@ -63,6 +63,22 @@ img{
     color: black;
     font-size: 40px;
 }
+.badge{
+  position: absolute;
+  background: #386641;
+  height: 2rem;
+  top: 1rem;
+  right: 12rem;
+  width: 2rem;
+  text-align: center;
+  line-height: 2rem;
+  border-radius: 50%;
+  border: 1px solid #386641;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+}
 .cart {
     position: fixed;
     top: 90px;
@@ -111,6 +127,7 @@ img{
       .small-pizza-card-name-price{
         display: flex;
         flex-direction: column;
+        width: 85px;
       }
   
       .small-pizza-card-price{
@@ -125,9 +142,8 @@ img{
         display: block;
         margin: 0 auto;
         max-width: 100%;
+        width: 100%;
         border-radius: 10%;
-        object-fit: scale-down;
-        padding: 10px;
       }
     }
   }

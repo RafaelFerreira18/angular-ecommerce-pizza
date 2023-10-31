@@ -8,7 +8,8 @@
         </ul>
     </div>
     <div class="menu-bar-icons">
-        <i class="fa-solid fa-cart-shopping" id="cart" (click)="openCart=!openCart"></i>
+        <i class="fa-solid fa-cart-shopping" id="cart" (click)="openAndCloseCart()"><span
+                class="badge">{{user.cart.length}}</span></i>
         <i class="fa-solid fa-user"></i>
     </div>
 </div>
@@ -20,23 +21,9 @@
             <i class="fa-solid fa-trash" style="color: #e00b0b;" (click)="deleteCart()"></i>
             <i class="fa-solid fa-circle-xmark" style="color: #e00b0b;" (click)="openCart=!openCart"></i>
         </div>
-        <div class="small-pizza-card">
-            <div class="small-pizza-card-name-price">
-                <h4>Di Karlotta</h4>
-                <span class="small-pizza-card-price">R$79,90</span>
-            </div>
-            <div class="small-pizza-card-image">
-                <img src="assets/images/pizza-image-placeholder.png" alt="">
-            </div>
-        </div>
-        <div class="small-pizza-card">
-            <div class="small-pizza-card-name-price">
-                <span>Di Karlotta</span>
-                <span class="small-pizza-card-price">R$79,90</span>
-            </div>
-            <div class="small-pizza-card-image">
-                <img src="assets/images/pizza-image-placeholder.png" alt="">
-            </div>
+        <app-small-pizza-card *ngFor="let p of user.cart" [smallPizza]="p"></app-small-pizza-card>
+        <div class="total-price">
+            <span>R${{totalPrice}}</span>
         </div>
     </div>
 </div>

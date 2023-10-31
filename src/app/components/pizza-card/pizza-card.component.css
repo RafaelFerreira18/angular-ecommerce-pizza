@@ -14,9 +14,11 @@
     display: flex;
     flex-direction: column;
     width: 360px;
+    margin-top: 10px;
 }
 
 .pizza-name-description p{
+    margin-top: 5px;
     font-weight: bold;
     overflow-wrap: break-word;
 }
@@ -55,7 +57,7 @@ hr{
 .pizza-price-cart i{
     color: #d71d1d;
     border: 2px solid red;
-    border-radius: 100%;
+    border-radius: 50%;
     padding: 5px;
     margin-left: 400px;
     transition: all 200ms ease-in-out;
