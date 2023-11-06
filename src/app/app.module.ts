@@ -8,6 +8,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { CardapioComponent } from './pages/cardapio/cardapio.component';
 import { PizzaCardComponent } from './components/pizza-card/pizza-card.component';
 import { SmallPizzaCardComponent } from './components/menu-bar/small-pizza-card/small-pizza-card.component';
+import { LoginComponent } from './pages/login/login.component';
+import { LoginFormComponent } from './components/login-form/login-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,10 +20,13 @@ import { SmallPizzaCardComponent } from './components/menu-bar/small-pizza-card/
     CardapioComponent,
     PizzaCardComponent,
     SmallPizzaCardComponent,
+    LoginComponent,
+    LoginFormComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

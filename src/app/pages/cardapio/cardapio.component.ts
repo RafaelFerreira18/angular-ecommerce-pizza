@@ -10,27 +10,45 @@ export class CardapioComponent {
   pizzasArray: PizzaModel[] = [
     {
       id: 1,
-      name: 'Calabresa',
-      description: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-      price: 69.69
+      name: 'Margherita',
+      description: 'Tomates grape, mussarela e manjericão ao pomodori pelati',
+      price: 35
     },
     {
       id: 2,
-      name: 'Di Karlotta',
-      description: 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb',
-      price: 59.69
+      name: 'Calabrese',
+      description: 'Calabresa defumada, mussarela e cebola ao pomodori pelati',
+      price: 35
     },
     {
       id: 3,
-      name: 'Filetto',
-      description: 'cccccccccccccccccccccccccccccccccccccccccccccccc',
-      price: 79.69
+      name: 'Portoghese',
+      description: 'Presunto, mussarela, ovo, azeitona, cebola e ervilhas frescas ao pomodori pelati',
+      price: 40
     },
     {
       id: 4,
-      name: 'Pepperonni',
-      description: 'dddddddddddddddddddddddddddddddddddddddddddddddddddd',
-      price: 89.69
+      name: 'Arabiatta',
+      description: 'Pepperoni, tomates grape, mussarela e manjericão ao pomodori pelati(levemente apimentado)',
+      price: 40
+    },
+    {
+      id: 5,
+      name: 'Filetto',
+      description: 'Filé bovino, tomates grape, mussarela e manjericão ao pomodori pelati',
+      price: 40
+    },
+    {
+      id: 6,
+      name: 'Della Karlota',
+      description: 'Lombo defumado, bacon, abacaxi flambado, mussarela e manjericão ao pomodori pelati',
+      price: 45
+    },
+    {
+      id: 7,
+      name: 'Dello Klebs',
+      description: 'Camarão rosa, alho poró e mussarela ao pomodori pelati',
+      price: 45
     },
   ]
 }

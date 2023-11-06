@@ -17,6 +17,10 @@
     margin-top: 10px;
 }
 
+.pizza-name-description h1{
+    font-weight: bold;
+}
+
 .pizza-name-description p{
     margin-top: 5px;
     font-weight: bold;
@@ -33,10 +37,9 @@
 .pizza-image img{
     display: block;
     margin: 0 auto;
-    max-width: 100%;
     border-radius: 10%;
     object-fit: scale-down;
-    width: 100%;
+    width: 200px;
 }
 
 hr{

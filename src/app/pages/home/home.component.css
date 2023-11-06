@@ -17,6 +17,10 @@
     box-shadow: 0px 10px 10px 10px rgba(0,0,0,0.2);
 }
 
+.home-container h1{
+    font-weight: bold;
+}
+
 .home-text-image{
     margin-top: 50px;
     margin-left: 50px;

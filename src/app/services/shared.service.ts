@@ -7,13 +7,24 @@ import { PizzaModel } from '../models/PizzaModel';
 })
 export class SharedService {
 
-  private subject = new Subject<any>();
+  private pizza = new Subject<any>();
+  private loggedIn = new Subject<Boolean>();
 
   sendClickEvent(pizza:PizzaModel){
-    this.subject.next(pizza);
+    this.pizza.next(pizza);
   }
 
   getClickEvent(){
-    return this.subject.asObservable();
+    return this.pizza.asObservable();
   }
+
+  sendLogin(loggedIn: boolean){
+    this.loggedIn.next(loggedIn)
+  }
+
+  getLogin(){
+    return this.loggedIn.asObservable();
+  }
+
+
 }

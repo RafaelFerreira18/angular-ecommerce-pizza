@@ -51,6 +51,9 @@ img{
 .menu-bar-tabs ul li:hover{
     transform: scale(1.1);
 }
+.menu-bar-tabs ul li a:hover{
+  color: white;
+}
 
 .menu-bar-icons{
     display: flex;
@@ -63,15 +66,19 @@ img{
     color: black;
     font-size: 40px;
 }
+
+.menu-bar-icons i:hover{
+  color: white;
+}
 .badge{
   position: absolute;
   background: #386641;
   height: 2rem;
   top: 1rem;
-  right: 12rem;
+  right: 10rem;
   width: 2rem;
   text-align: center;
-  line-height: 2rem;
+  line-height: 1.4rem;
   border-radius: 50%;
   border: 1px solid #386641;
   font-family: sans-serif;
@@ -89,7 +96,7 @@ img{
       left: -120px;
       background: white;
       border-radius: 15px;
-      overflow: hidden;
+      overflow: auto;
       transition: max-height 0.3s ease;
       max-height: 0;
       font-size: 20px;
@@ -97,8 +104,7 @@ img{
       &.show {
         max-height: 900px;
         box-shadow: 0px 5px 5px 5px rgba(0,0,0,0.4);
-        height: 800px;
-        width: 250px;
+        width: 300px;
       }
       .cart-exit{
         display: flex;
@@ -116,34 +122,66 @@ img{
       .cart-exit i:active{
         transform: translateY(0.5px);
       }
+    }
+}
+.total-price{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 10px;
+  margin-right: 20px;
+  color: red;
+  margin-top: 10px;
+}
 
-      .small-pizza-card {
-        display: flex;
-        align-items: center;
-        padding: .25rem .5rem;
-        margin-top: 15px;
-      }
-  
-      .small-pizza-card-name-price{
-        display: flex;
-        flex-direction: column;
-        width: 85px;
-      }
-  
-      .small-pizza-card-price{
-        color: red;
-      }
-      .small-pizza-card-image{
-        display: inline-block;
-        margin-left: 10px;
-      }
-      .small-pizza-card-image img{
-        position: relative;
-        display: block;
-        margin: 0 auto;
-        max-width: 100%;
-        width: 100%;
-        border-radius: 10%;
-      }
+app-small-pizza-card{
+  margin-top: 10px;
+}
+
+.profile-container {
+  position: fixed;
+  top: 90px;
+  right: 180px;
+  .profile-content {
+    position: absolute;
+    right: 0;
+    left: -120px;
+    background: white;
+    border-radius: 15px;
+    overflow: auto;
+    transition: max-height 0.3s ease;
+    max-height: 0;
+    font-size: 20px;
+    font-weight: bold;
+    &.show {
+      justify-content: center;
+      max-height: 900px;
+      box-shadow: 0px 5px 5px 5px rgba(0,0,0,0.4);
+      width: 300px;
+    }
+    .profile-welcome-message{
+      display: flex;
+      justify-content: center;
+      background-color: #386641;
+      padding: 20px;
+      color: white;
+    }
+    .profile-tabs ul li{
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 1em;
+      border-bottom: 1px solid;
+    }
+    .tab-sair{
+      background-color: #BC4749;
+    }
+    .tab-sair a{
+      color: white;
     }
   }
+}
+
+hr{
+  border: 1px solid red;
+}
