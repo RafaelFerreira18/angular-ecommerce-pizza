@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { PizzaModel } from 'src/app/models/PizzaModel';
 import { UserModel } from 'src/app/models/UserModel';
 import { SharedService } from 'src/app/services/shared.service';
+import { UserServiceService } from 'src/app/services/user-service.service';
 @Component({
   selector: 'app-menu-bar',
   templateUrl: './menu-bar.component.html',
@@ -20,7 +21,7 @@ export class MenuBarComponent {
   userEventSubscription: Subscription;
   totalPrice:number = 0;
   loggedIn: Boolean = false;
-  constructor(private sharedService:SharedService){
+  constructor(private sharedService:SharedService, private userService: UserServiceService){
     this.user ={
       name: '',
       password: '',
@@ -32,11 +33,11 @@ export class MenuBarComponent {
       this.addToCart(pizza)
     })
     this.loginEventSubscription=
-    this.sharedService.getLogin().subscribe((bool) =>{
+    this.userService.getLogin().subscribe((bool) =>{
       this.loggedIn = bool;
     })
     this.userEventSubscription=
-    this.sharedService.getUser().subscribe((user) =>{
+    this.userService.getUser().subscribe((user) =>{
       this.user = user
     })
   }
@@ -65,7 +66,6 @@ export class MenuBarComponent {
 
   public logOff(){
     this.openAndCloseProfile();
-    this.openAndCloseCart();
     this.deleteCart();
     this.loggedIn = false
   }

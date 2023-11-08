@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 import { Login } from 'src/app/formModel/login';
 import { UserModel } from 'src/app/models/UserModel';
 import { SharedService } from 'src/app/services/shared.service';
+import { UserServiceService } from 'src/app/services/user-service.service';
 
 @Component({
   selector: 'app-login-form',
@@ -50,7 +51,7 @@ export class LoginFormComponent{
     private loginFormBuilder: FormBuilder,
     private registerFormBuilder: FormBuilder,
     private sharedService: SharedService,
-    private userService: SharedService,
+    private userService: UserServiceService,
     private _router: Router,
   ){}
 
@@ -62,7 +63,7 @@ export class LoginFormComponent{
     for(var u of this.users){
       if(u.email == this.formLogin.value.email && u.password == this.formLogin.value.password){
         this.loggedIn = true
-        this.sharedService.sendLogin(this.loggedIn)
+        this.userService.sendLogin(this.loggedIn)
         this.user.name = u.name
         this.user.email = u.email
         this.user.password = u.password
