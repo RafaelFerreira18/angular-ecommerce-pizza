@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 2fr 2fr;
     margin-left: 200px;
-    margin-top: 200px;
+    margin-top: 40px;
 }
 
 app-pizza-card{

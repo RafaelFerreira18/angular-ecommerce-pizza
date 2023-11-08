@@ -1,0 +1,59 @@
+.footer-container{
+    display: flex;
+    background-color: #da333a;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    justify-content: space-between;
+    font-size: 30px;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.footer-poweredBy a{
+    color: white;
+    background:
+    linear-gradient(
+      to right,
+      #f25e0f,
+      rgb(0, 0, 0)
+    ),
+    linear-gradient(
+      to right,
+      #da333a,
+      #fefefe,
+      #257111
+  );
+  background-size: 100% 3px, 0 3px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+}
+.footer-poweredBy a:hover{
+    background-size: 0 3px, 100% 3px;
+}
+.footer-napoletta-social-media{
+    display: flex;
+    align-items: center;
+}
+.footer-napoletta-social-media ul{
+    display: flex;
+    list-style-type: none;
+    margin-top: 15px;
+}
+.footer-napoletta-social-media ul li{
+    margin-right: 40px;
+    transition: all .5s;
+}
+
+.footer-napoletta-social-media ul li:hover{
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-font-smoothing: antialiased;transform: translateY(1px);
+    transform: rotateY(360deg);
+}
+
+.footer-napoletta-social-media ul li a{
+    color: white;
+}

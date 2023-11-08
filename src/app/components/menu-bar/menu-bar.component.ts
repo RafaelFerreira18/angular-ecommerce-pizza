@@ -17,11 +17,12 @@ export class MenuBarComponent {
   openProfile: boolean = false;
   pizzaEventSubscription:Subscription;
   loginEventSubscription:Subscription;
+  userEventSubscription: Subscription;
   totalPrice:number = 0;
   loggedIn: Boolean = false;
   constructor(private sharedService:SharedService){
     this.user ={
-      name: 'Rafael',
+      name: '',
       password: '',
       email: '',
       cart:[]
@@ -34,6 +35,10 @@ export class MenuBarComponent {
     this.sharedService.getLogin().subscribe((bool) =>{
       this.loggedIn = bool;
     })
+    this.userEventSubscription=
+    this.sharedService.getUser().subscribe((user) =>{
+      this.user = user
+    })
   }
   public deleteCart(){
     this.user.cart = []
@@ -42,7 +47,7 @@ export class MenuBarComponent {
 
   public addToCart(pizza:PizzaModel){
     this.user.cart.push(pizza)
-    this.totalPrice += Number(pizza.price.toPrecision())
+    this.totalPrice += Number(pizza.price.toFixed(2))
   }
   public openAndCloseCart(){
     if(this.openProfile == true){
@@ -59,7 +64,9 @@ export class MenuBarComponent {
   }
 
   public logOff(){
+    this.openAndCloseProfile();
+    this.openAndCloseCart();
+    this.deleteCart();
     this.loggedIn = false
   }
-
 }

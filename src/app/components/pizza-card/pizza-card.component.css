@@ -6,8 +6,7 @@
 }
 
 .pizza-card-name-description-image{
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 10px;
     display: flex;
 }
 .pizza-name-description{
@@ -23,8 +22,10 @@
 
 .pizza-name-description p{
     margin-top: 5px;
+    font-size: 20px;
     font-weight: bold;
     overflow-wrap: break-word;
+    color: rgb(82, 82, 82);
 }
 
 .pizza-image{
@@ -51,11 +52,13 @@ hr{
     margin: 10px;
     padding-bottom: 10px;
     color: red;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
 }
 
-
+.pizza-price-cart span{
+    font-family: 'Montserrat', sans-serif;
+}
 
 .pizza-price-cart i{
     color: #d71d1d;

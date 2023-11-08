@@ -11,6 +11,10 @@ import { SmallPizzaCardComponent } from './components/menu-bar/small-pizza-card/
 import { LoginComponent } from './pages/login/login.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AboutComponent } from './pages/about/about.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { CartComponent } from './pages/cart/cart.component';
+import { FooterBarComponent } from './components/footer-bar/footer-bar.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +26,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     SmallPizzaCardComponent,
     LoginComponent,
     LoginFormComponent,
+    AboutComponent,
+    ProfileComponent,
+    CartComponent,
+    FooterBarComponent,
   ],
   imports: [
     BrowserModule,

@@ -18,7 +18,9 @@
     font-weight: bold;
   }
   .small-pizza-card-price{
+    font-family: 'Montserrat', sans-serif;
     color: red;
+    font-weight: 400;
   }
   .small-pizza-card-image{
     display: inline-block;

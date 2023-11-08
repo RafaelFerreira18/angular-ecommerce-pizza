@@ -3,15 +3,15 @@
     <div class="menu-bar-tabs">
         <ul>
             <li><a [routerLink]="['']">Home</a></li>
-            <li><a [routerLink]="['cardapio']">Cardápio</a></li>
-            <li><a [routerLink]="">Sobre nós</a></li>
+            <li><a [routerLink]="['Cardapio']">Cardápio</a></li>
+            <li><a [routerLink]="['Sobre']">Sobre nós</a></li>
         </ul>
     </div>
     <div class="menu-bar-icons">
         <i class="fa-solid fa-cart-shopping" id="cart" (click)="openAndCloseCart()"><span
                 class="badge">{{user.cart.length}}</span></i>
         <i class="fa-solid fa-user" (click)="openAndCloseProfile()" *ngIf="loggedIn; else elseBlock"></i>
-        <ng-template #elseBlock><i class="fa-solid fa-user" [routerLink]="['login']"></i></ng-template>
+        <ng-template #elseBlock><i class="fa-solid fa-user" [routerLink]="['Login']"></i></ng-template>
     </div>
 </div>
 
@@ -28,6 +28,8 @@
             <span>Valor Total:</span>
             <span>R${{totalPrice}}</span>
         </div>
+        <button type="button" class="btn btn-danger" [routerLink]="['Carrinho']"><i class="fa-solid fa-forward"
+                style="color: white;"></i></button>
     </div>
 </div>
 
@@ -38,9 +40,9 @@
         </div>
         <div class="profile-tabs">
             <ul>
-                <li><a href="#">Editar perfil</a></li>
+                <li><a [routerLink]="['Perfil']">Editar perfil</a></li>
                 <li><a href="#">Meus pedidos</a></li>
-                <li class="tab-sair" (click)="logOff()">Sair</li>
+                <li class="tab-sair"><a [routerLink]="['']" (click)="logOff()">Sair</a></li>
             </ul>
         </div>
     </div>

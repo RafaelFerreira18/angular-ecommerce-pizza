@@ -5,6 +5,18 @@ form{
     box-shadow: 0px 0px 10px 10px rgba(0,0,0,0.3);
 }
 
+.form-login-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.form-login-title h1{
+    font-size: 40px;
+    font-weight: bold;
+}
+
 .form-group{
     font-size: 30px;
     margin-top: 10px;
@@ -20,6 +32,7 @@ form{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    margin-bottom: 20px;
 }
 
 .btn{
@@ -29,3 +42,31 @@ form{
     margin-right: 40px;
     margin-left: 40px;
 }
+
+.login-form-register-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form-register-btn span{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.login-form-register-btn span a{
+    color: red;
+    display: inline-block;
+}
+
+.login-form-register-btn span a:hover{
+    animation: tilt-shaking 0.25s infinite;
+}
+
+@keyframes tilt-shaking {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(0eg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+  }
