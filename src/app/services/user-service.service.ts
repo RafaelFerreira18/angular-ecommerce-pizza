@@ -1,13 +1,22 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { UserModel } from '../models/UserModel';
+import { PizzaModel } from '../models/PizzaModel';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/Api';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserServiceService {
   private loggedIn = new Subject<Boolean>();
-  private user = new Subject<UserModel>(); 
+  private user = new Subject<UserModel>();
+  private cart = new Subject<PizzaModel[]>
+  private userBaseUrl = '';
+  private userData: UserModel | any;
+  constructor(private http: HttpClient){
+    this.userBaseUrl = environment.userApi
+  }
   sendLogin(loggedIn: boolean){
     this.loggedIn.next(loggedIn)
   }
@@ -23,4 +32,20 @@ export class UserServiceService {
   getUser(){
     return this.user.asObservable();
   }
+
+  sendCart(cart: PizzaModel[]){
+    this.cart.next(cart)
+  }
+
+  getCart(){
+    return this.cart.asObservable();
+  }
+
+  getUserData(userId: Number): Observable<UserModel>{
+    this.userData = this.http.get<UserModel>(`${this.userBaseUrl}${userId}`)
+    console.log(this.userData)
+    return this.userData
+  }
+
+
 }

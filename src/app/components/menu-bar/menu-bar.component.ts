@@ -69,4 +69,13 @@ export class MenuBarComponent {
     this.deleteCart();
     this.loggedIn = false
   }
+
+  public accountDetails(){
+    this.userService.sendUser(this.user)
+  }
+
+  public sendCart(){
+    this.userService.sendCart(this.user.cart)
+  }
+
 }

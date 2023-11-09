@@ -11,7 +11,7 @@ export class SmallPizzaCardComponent {
   constructor(){
     this.smallPizza = {
       id:0,
-      name:'',
+      pizzaName:'',
       description:'',
       price:0
     }

@@ -1,6 +1,6 @@
 export type PizzaModel = {
     id: number,
-    name: string,
+    pizzaName: string,
     description: string,
     price:number
 }

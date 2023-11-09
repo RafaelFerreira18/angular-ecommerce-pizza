@@ -15,6 +15,8 @@ import { AboutComponent } from './pages/about/about.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { FooterBarComponent } from './components/footer-bar/footer-bar.component';
+import { CouponsComponent } from './pages/coupons/coupons.component';
+import {HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -30,11 +32,13 @@ import { FooterBarComponent } from './components/footer-bar/footer-bar.component
     ProfileComponent,
     CartComponent,
     FooterBarComponent,
+    CouponsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

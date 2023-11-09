@@ -1,7 +1,7 @@
 <div class="small-pizza-card">
     <div class="small-pizza-card-name-price">
-        <h4>{{smallPizza.name}}</h4>
-        <span class="small-pizza-card-price">R${{smallPizza.price}}</span>
+        <h4>{{smallPizza.pizzaName}}</h4>
+        <span class="small-pizza-card-price">R${{smallPizza.price.toFixed(2).replace('.',',')}}</span>
     </div>
     <div class="small-pizza-card-image">
         <img src="assets/images/pizza-image-placeholder.png" alt="a">

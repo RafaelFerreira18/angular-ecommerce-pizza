@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators, FormBuilder} from '@angular/forms'
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { Login } from 'src/app/formModel/login';
 import { UserModel } from 'src/app/models/UserModel';
 import { SharedService } from 'src/app/services/shared.service';
 import { UserServiceService } from 'src/app/services/user-service.service';

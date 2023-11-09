@@ -13,7 +13,7 @@ export class PizzaCardComponent {
   constructor(private sharedService: SharedService){
     this.pizza = {
       id:0,
-      name:'',
+      pizzaName:'',
       description: '',
       price: 0
     }

@@ -1,16 +1,16 @@
 <div class="pizza-card-container">
     <div class="pizza-card-name-description-image">
         <div class="pizza-name-description">
-            <h1>{{pizza.name}}</h1>
+            <h1>{{pizza.pizzaName}}</h1>
             <p>{{pizza.description}}</p>
         </div>
         <div class="pizza-image">
-            <img src="assets/images/pizza-image-placeholder.png" alt={{pizza.name}}>
+            <img src="assets/images/pizza-image-placeholder.png" alt={{pizza.pizzaName}}>
         </div>
     </div>
     <hr>
     <div class="pizza-price-cart">
-        <span>R${{pizza.price}}</span>
+        <span>R${{pizza.price.toFixed(2).replace('.',',')}}</span>
         <i class="fa-solid fa-plus" (click)="addToCart()"></i>
     </div>
 </div>

@@ -26,10 +26,10 @@
         <hr>
         <div class="total-price">
             <span>Valor Total:</span>
-            <span>R${{totalPrice}}</span>
+            <span>R${{totalPrice.toFixed(2).replace('.',',')}}</span>
         </div>
-        <button type="button" class="btn btn-danger" [routerLink]="['Carrinho']"><i class="fa-solid fa-forward"
-                style="color: white;"></i></button>
+        <button type="button" class="btn btn-danger" (click)="sendCart()" [routerLink]="['Carrinho']"><i
+                class="fa-solid fa-forward" style="color: white;"></i></button>
     </div>
 </div>
 
@@ -40,8 +40,8 @@
         </div>
         <div class="profile-tabs">
             <ul>
-                <li><a [routerLink]="['Perfil']">Editar perfil</a></li>
-                <li><a href="#">Meus pedidos</a></li>
+                <li><a (click)="accountDetails()" [routerLink]="['Perfil']">Editar perfil</a></li>
+                <li><a href="#">Meus cupons</a></li>
                 <li class="tab-sair"><a [routerLink]="['']" (click)="logOff()">Sair</a></li>
             </ul>
         </div>

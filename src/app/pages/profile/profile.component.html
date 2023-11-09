@@ -1,1 +1,5 @@
-<p>profile works!</p>
+<div class="account-container">
+    <input type="number" (input)="getUserData($any($event.target).value)">
+</div>
+
+<h1>{{user.name}}</h1>
