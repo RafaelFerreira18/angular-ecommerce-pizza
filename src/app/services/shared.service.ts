@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { PizzaModel } from '../models/PizzaModel';
-import { UserModel } from '../models/UserModel';
+
 
 @Injectable({
   providedIn: 'root'

@@ -1,0 +1,26 @@
+<form [formGroup]="addPizzaForm" (ngSubmit)="addPizza()">
+    <div class="form-login-title">
+        <h1>Adicionar nova pizza</h1>
+    </div>
+    <div class="form-group">
+        <label for="pizzaName">Nome da pizza</label>
+        <input type="text" class="form-control" id="pizzaName" formControlName="pizzaName">
+    </div>
+    <div class="form-group">
+        <label for="description">Descrição da pizza:</label>
+        <input type="text" class="form-control" id="description" required formControlName="description">
+    </div>
+    <div class="form-group">
+        <label for="price">Preço:</label>
+        <input type="number" class="form-control" id="price" required formControlName="price">
+    </div>
+    <div class="form-group">
+        <label for="pizzaFile">Imagem</label>
+        <input type="file" class="form-control" id="pizzaFile" required formControlName="pizzaFile"
+            (change)="onFileSelected($event)">
+    </div>
+    <div class="login-form-buttons">
+        <input type="submit" class="btn btn-primary mt-4" value="Adicionar">
+        <a href="#" class="btn btn-secondary mt-4 ml-2">Cancelar</a>
+    </div>
+</form>

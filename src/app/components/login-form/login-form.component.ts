@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators, FormBuilder} from '@angular/forms'
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
 import { UserModel } from 'src/app/models/UserModel';
 import { SharedService } from 'src/app/services/shared.service';
 import { UserServiceService } from 'src/app/services/user-service.service';
@@ -11,31 +10,17 @@ import { UserServiceService } from 'src/app/services/user-service.service';
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.css']
 })
-export class LoginFormComponent{
-  users = [
-    {
-        name:'Rafael',
-        email:'rafa123@gmail.com',
-        password:'123'
-    },
-    {
-        name:'Luisa',
-        email:'luisa123@gmail.com',
-        password:'1234'
-    },
-    {
-        name:'Bob',
-        email:'bob123@gmail.com',
-        password:'12345'
-    },
-]
+export class LoginFormComponent implements OnInit{
+  email = new FormControl('', Validators.required)
+  password = new FormControl('', Validators.required)
   formLogin = this.loginFormBuilder.group({
-    email: '',
-    password: ''
+    email: this.email,
+    password: this.password
   });
   formRegister = this.registerFormBuilder.group({
+    name: '',
     email:'',
-    password:''
+    password:'',
   })
   loggedIn: boolean = false
   register: boolean = true
@@ -43,9 +28,10 @@ export class LoginFormComponent{
     name: '',
     email: '',
     password: '',
-    cart: []
+    cart: [],
+    role: 'user'
   };
-
+  private users:UserModel[] = []
   constructor(
     private loginFormBuilder: FormBuilder,
     private registerFormBuilder: FormBuilder,
@@ -53,11 +39,21 @@ export class LoginFormComponent{
     private userService: UserServiceService,
     private _router: Router,
   ){}
+  ngOnInit(): void {
+    this.getAllUserData();
+  }
 
   changeToRegister(){
     this.register =! this.register
   }
 
+  
+
+  getAllUserData(){
+    this.userService.getAllUserData().subscribe({
+      next:(res) => this.users = res
+    })
+  }
   onSubmitLogin(){
     for(var u of this.users){
       if(u.email == this.formLogin.value.email && u.password == this.formLogin.value.password){
@@ -76,11 +72,15 @@ export class LoginFormComponent{
     }
   }
   onSubmitRegister(){
-    var registeringUser = {
-      name: '',
+    var userToRegister = {
+      id: 0,
+      name: String(this.formRegister.value.name),
       email: String(this.formRegister.value.email),
       password: String(this.formRegister.value.password)
     }
-    this.users.push(registeringUser)
+    this.userService.registerUser(userToRegister).subscribe(() =>{
+      console.warn(userToRegister)
+      this.changeToRegister()
+    })
   }
 }

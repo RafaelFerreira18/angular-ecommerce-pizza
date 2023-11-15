@@ -5,6 +5,7 @@ import { PizzaModel } from '../models/PizzaModel';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/Api';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,6 +14,7 @@ export class UserServiceService {
   private user = new Subject<UserModel>();
   private cart = new Subject<PizzaModel[]>
   private userBaseUrl = '';
+  private allUserData: UserModel[] | any;
   private userData: UserModel | any;
   constructor(private http: HttpClient){
     this.userBaseUrl = environment.userApi
@@ -33,19 +35,17 @@ export class UserServiceService {
     return this.user.asObservable();
   }
 
-  sendCart(cart: PizzaModel[]){
-    this.cart.next(cart)
-  }
-
-  getCart(){
-    return this.cart.asObservable();
-  }
-
   getUserData(userId: Number): Observable<UserModel>{
-    this.userData = this.http.get<UserModel>(`${this.userBaseUrl}${userId}`)
-    console.log(this.userData)
+    this.userData = this.http.get<UserModel>(`${this.userBaseUrl}/${userId}`)
     return this.userData
   }
 
+  getAllUserData():Observable<UserModel[]>{
+    this.allUserData = this.http.get<UserModel[]>(this.userBaseUrl)
+    return this.allUserData
+  }
 
+  registerUser(user:any){
+    return this.http.post(this.userBaseUrl, user)
+  }
 }

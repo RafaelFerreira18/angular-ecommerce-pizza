@@ -1,6 +1,9 @@
+import { FileHandler } from "./FileHandler.model"
+
 export type PizzaModel = {
-    id: number,
-    pizzaName: string,
-    description: string,
-    price:number
+    id: Number,
+    pizzaName: String,
+    description: String,
+    price:Number,
+    pizzaImg: FileHandler
 }

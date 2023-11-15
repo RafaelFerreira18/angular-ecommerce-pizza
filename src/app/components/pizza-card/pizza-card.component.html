@@ -5,7 +5,7 @@
             <p>{{pizza.description}}</p>
         </div>
         <div class="pizza-image">
-            <img src="assets/images/pizza-image-placeholder.png" alt={{pizza.pizzaName}}>
+            <img [src]="pizza.pizzaImg.url" alt={{pizza.pizzaName}}>
         </div>
     </div>
     <hr>

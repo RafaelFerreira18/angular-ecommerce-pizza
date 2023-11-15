@@ -13,7 +13,13 @@ export class SmallPizzaCardComponent {
       id:0,
       pizzaName:'',
       description:'',
-      price:0
+      price:0,
+      pizzaImg: {
+        file: new File(["foo"], "foo.txt", {
+          type: "text/plain",
+        }),
+        url: 'undefined'
+      }
     }
   }
 }

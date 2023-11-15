@@ -28,7 +28,7 @@
             <span>Valor Total:</span>
             <span>R${{totalPrice.toFixed(2).replace('.',',')}}</span>
         </div>
-        <button type="button" class="btn btn-danger" (click)="sendCart()" [routerLink]="['Carrinho']"><i
+        <button type="button" class="btn btn-danger" (click)="goToCart()" [routerLink]="['Carrinho']"><i
                 class="fa-solid fa-forward" style="color: white;"></i></button>
     </div>
 </div>
@@ -42,6 +42,7 @@
             <ul>
                 <li><a (click)="accountDetails()" [routerLink]="['Perfil']">Editar perfil</a></li>
                 <li><a href="#">Meus cupons</a></li>
+                <li><a [routerLink]="['Adicionar']">Adicionar pizza</a></li>
                 <li class="tab-sair"><a [routerLink]="['']" (click)="logOff()">Sair</a></li>
             </ul>
         </div>

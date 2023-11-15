@@ -13,7 +13,8 @@ export class ProfileComponent implements OnInit {
     name: '',
     email: '',
     password: '',
-    cart: []
+    cart: [],
+    role: 'user'
   };
   constructor(private userService:UserServiceService){}
 
@@ -27,7 +28,8 @@ export class ProfileComponent implements OnInit {
           name: res.name,
           email: res.email,
           password: res.password,
-          cart: []
+          cart: [],
+          role: 'user'
         }
       }
     })

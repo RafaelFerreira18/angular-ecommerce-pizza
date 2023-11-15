@@ -4,5 +4,6 @@ export type UserModel = {
     name: String;
     password: String;
     email: String,
-    cart: PizzaModel[]
+    cart: PizzaModel[],
+    role: String
 }

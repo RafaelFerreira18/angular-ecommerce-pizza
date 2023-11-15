@@ -2,6 +2,7 @@ import { Component, ElementRef, HostBinding, Input} from '@angular/core';
 import { Subscription } from 'rxjs';
 import { PizzaModel } from 'src/app/models/PizzaModel';
 import { UserModel } from 'src/app/models/UserModel';
+import { OrderService } from 'src/app/services/order.service';
 import { SharedService } from 'src/app/services/shared.service';
 import { UserServiceService } from 'src/app/services/user-service.service';
 @Component({
@@ -21,12 +22,13 @@ export class MenuBarComponent {
   userEventSubscription: Subscription;
   totalPrice:number = 0;
   loggedIn: Boolean = false;
-  constructor(private sharedService:SharedService, private userService: UserServiceService){
+  constructor(private sharedService:SharedService, private userService: UserServiceService, private orderService: OrderService){
     this.user ={
       name: '',
       password: '',
       email: '',
-      cart:[]
+      cart:[],
+      role: 'user'
     }
     this.pizzaEventSubscription=
     this.sharedService.getClickEvent().subscribe((pizza) =>{
@@ -70,12 +72,26 @@ export class MenuBarComponent {
     this.loggedIn = false
   }
 
+  public goToCart(){
+    var pizzaOrder = [
+
+    ]
+    for(var p of this.user.cart){
+      var tmpObject = {
+        pizza:{
+          id:p.id,
+          pizzaName: p.pizzaName,
+          description: p.description,
+          price: p.price,
+          pizzaImage: p.pizzaImg
+        }
+      }
+      pizzaOrder.push(tmpObject)
+    }
+    this.orderService.postOrder(pizzaOrder).subscribe();
+  }
+
   public accountDetails(){
     this.userService.sendUser(this.user)
   }
-
-  public sendCart(){
-    this.userService.sendCart(this.user.cart)
-  }
-
 }

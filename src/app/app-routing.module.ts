@@ -6,6 +6,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { CartComponent } from './pages/cart/cart.component';
+import { AddPizzaPageComponent } from './pages/add-pizza-page/add-pizza-page.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path:'Carrinho',
     component:CartComponent
+  },
+  {
+    path:'Adicionar',
+    component:AddPizzaPageComponent
   }
 
   

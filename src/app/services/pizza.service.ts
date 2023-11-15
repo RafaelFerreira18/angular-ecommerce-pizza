@@ -16,7 +16,10 @@ export class PizzaService {
 
   getAllPizzaData():Observable<PizzaModel[]>{
     this.allPizzaData = this.http.get<PizzaModel[]>(this.pizzaBaseUrl)
-    console.log(this.allPizzaData)
     return this.allPizzaData
+  }
+
+  postPizza(pizza: FormData){
+    return this.http.post(this.pizzaBaseUrl, pizza)
   }
 }
