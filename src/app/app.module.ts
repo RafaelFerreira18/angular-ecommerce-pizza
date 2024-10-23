@@ -18,7 +18,8 @@ import { FooterBarComponent } from './components/footer-bar/footer-bar.component
 import { CouponsComponent } from './pages/coupons/coupons.component';
 import {HttpClientModule} from '@angular/common/http';
 import { AddNewPizzaComponent } from './components/add-new-pizza/add-new-pizza.component';
-import { AddPizzaPageComponent } from './pages/add-pizza-page/add-pizza-page.component'
+import { AddPizzaPageComponent } from './pages/add-pizza-page/add-pizza-page.component';
+import { CarrouselComponent } from './components/carrousel/carrousel.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { AddPizzaPageComponent } from './pages/add-pizza-page/add-pizza-page.com
     CouponsComponent,
     AddNewPizzaComponent,
     AddPizzaPageComponent,
+    CarrouselComponent,
   ],
   imports: [
     BrowserModule,

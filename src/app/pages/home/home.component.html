@@ -1,17 +1,24 @@
 <div class="home-container">
-    <h1>O que é uma Napolettá?</h1>
-    <div class="home-text-image">
-        <div class="paragraphs">
-            <p>As nossas pizzas napolitanas tem uma textura de massa mais “elástica” ou “esponjosa”, graças a todo o
-                processo
-                delicado que nós fazemos em relação ao ar da massa durante a
-                amassadura. Do mesmo modo, a massa de pizza napolitana tem uma maior percentagem de água por grama de
-                farinha, o que lhe confere a sua textura particular.</p>
-            <p>Então venha degustar da melhor pizza Napolitana de Belém!</p>
+    <div class="home-title-img-container">
+        <div class="home-title-container">
+            <h1>
+                Bem-vindo à <span class="logo">Napolettá</span>!
+            </h1>
+            <span>A melhor pizzaria napolitana de Belém</span>
+            <div class="call-button">
+                <button [routerLink]="['Cardapio']" class="btn btn-danger" id="btCardapio">Cardápio</button>
+                <button class="btn btn-success" id="btAbout">Sobre nós</button>
+            </div>
         </div>
-        <img src="assets/images/image.png" alt="">
+        <img src="assets\images\image.png" alt="">
     </div>
-    <div class="call-button">
-        <button [routerLink]="['Cardapio']" class="btn btn-danger">Peça aqui!</button>
+    <div class="home-carrousel-container">
+        <div class="carousel-item">
+            <img src="" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>...</h5>
+                <p>...</p>
+            </div>
+        </div>
     </div>
 </div>

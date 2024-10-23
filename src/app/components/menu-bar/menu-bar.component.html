@@ -1,11 +1,8 @@
 <div class="menu-bar-container">
-    <img src="assets\images\napolettáImg.png" alt="napolettá logo">
     <div class="menu-bar-tabs">
-        <ul>
-            <li><a [routerLink]="['']">Home</a></li>
-            <li><a [routerLink]="['Cardapio']">Cardápio</a></li>
-            <li><a [routerLink]="['Sobre']">Sobre nós</a></li>
-        </ul>
+        <img src="assets\images\napolettáImg.png" alt="napolettá logo">
+        <a [routerLink]="['']">Home</a>
+        <a [routerLink]="['Cardapio']">Cardápio</a>
     </div>
     <div class="menu-bar-icons">
         <i class="fa-solid fa-cart-shopping" id="cart" (click)="openAndCloseCart()"><span

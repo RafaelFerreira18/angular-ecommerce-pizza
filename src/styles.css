@@ -2,13 +2,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Italiana', sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 body{
-    background-color: #F2E8CF;
+    background-color: #ffffff;
 }
 
 a{
     text-decoration: none;
-    color: black;
+    color: white;
 }

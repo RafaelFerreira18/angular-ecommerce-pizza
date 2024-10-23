@@ -1,9 +1,10 @@
 body{
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    display: block;
 }
 
 app-footer-bar{
-    flex-shrink: 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
 }
