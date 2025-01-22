@@ -1,33 +1,36 @@
-<header class="bg-white text-black p-4 flex items-center justify-between">
+<header class="text-black p-4 flex items-center justify-between">
     <div class="flex items-center">
-        <img src="images/napolettáImg.png" alt="Logo da Empresa" class="h-12 mr-4 rounded">
+        <button (click)="toggleMenu()" class="lg:hidden text-black hover:text-green-800 mr-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="h-8 w-8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5M3.75 12h16.5M3.75 18.75h16.5" />
+            </svg>
+        </button>
+        <img src="images/napolettáImg.png" alt="Logo da Empresa" class="h-16 ml-10 rounded hidden lg:block">
     </div>
 
-    <nav class="flex-1">
-        <ul class="flex justify-center space-x-12">
-            <li><a href="#home" class="text-lg hover:text-green-800">Home</a></li>
-            <li><a href="#services" class="text-lg hover:text-green-800">Cardápio</a></li>
-            <li><a href="#contact" class="text-lg hover:text-green-800">Contato</a></li>
+    <nav [ngClass]="{ 'hidden': !isMenuOpen, 'block': isMenuOpen }"
+        class="absolute top-14 left-0 w-full bg-white shadow-lg lg:static lg:block lg:shadow-none lg:w-auto">
+        <ul class="flex flex-col lg:flex-row lg:space-y-0 space-y-4 lg:space-x-12 font-semibold p-4 lg:p-0">
+            <li><a href="#home" class="text-lg hover:text-green-800 hover:font-bold">Home</a></li>
+            <li><a href="#services" class="text-lg hover:text-green-800 hover:font-bold">Cardápio</a></li>
+            <li><a href="#contact" class="text-lg hover:text-green-800 hover:font-bold">Contato</a></li>
+            <li class="lg:hidden">
+                <button class="bg-green-800 text-white font-bold px-4 py-2 rounded hover:bg-green-600">
+                    <i class="fa-solid fa-right-to-bracket"></i> Login
+                </button>
+            </li>
         </ul>
     </nav>
 
-    <div>
-        <div class="flex justify-center space-x-5">
-            <div class="relative py-2 transition ease-in-out duration-300 hover:-translate-y-1 px-4">
-                <div class="t-0 absolute left-3">
-                    <p class="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-3 text-xs text-white">3
-                    </p>
-                </div>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="file: mt-4 h-6 w-6">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-                </svg>
-            </div>
-            <button
-                class="bg-green-800 transition ease-in-out duration-300 hover:bg-red-400 text-white font-bold py-2 px-4 rounded">
-                Login
-            </button>
+    <div class="relative py-2 px-4 transition ease-in-out duration-300 hover:-translate-y-1">
+        <div class="t-0 absolute left-3">
+            <p class="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-3 text-xs text-white">3</p>
         </div>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            class="file: mt-4 h-8 w-8">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+        </svg>
     </div>
 </header>
