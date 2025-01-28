@@ -7,7 +7,7 @@ module.exports = {
     extend: {
       colors: {
         beige: '#f5af00',
-      }
+      },
     },
   },
   plugins: [],
