@@ -1,0 +1,8 @@
+<div class="cardapio-container flex flex-col items-center justify-center h-screen">
+    <h1 class="text-4xl text-gray-800 font-bold my-10">Nosso Cardápio</h1>
+    <div class="grid grid-cols-4 space-x-10">
+        <div *ngFor="let pizza of pizzasArray">
+            <app-card-pizza [pizza]="pizza"></app-card-pizza>
+        </div>
+    </div>
+</div>
