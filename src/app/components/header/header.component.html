@@ -1,19 +1,19 @@
-<header class="text-black p-4 flex items-center justify-between">
+<header class="sticky top-0 z-50 text-black p-4 flex items-center justify-between shadow-md">
     <div class="flex items-center">
-        <button (click)="toggleMenu()" class="lg:hidden text-black hover:text-green-800 mr-4">
+        <button (click)="toggleMenu()" class="lg:hidden text-black hover:text-green-800">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="h-8 w-8">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5M3.75 12h16.5M3.75 18.75h16.5" />
             </svg>
         </button>
-        <img src="images/napolettáImg.png" alt="Logo da Empresa" class="h-16 ml-10 rounded hidden lg:block">
+        <img src="images/napolettáImg.png" alt="Logo da Empresa" class="h-16 ml-12 mr-10 rounded hidden lg:block">
     </div>
 
     <nav [ngClass]="{ 'hidden': !isMenuOpen, 'block': isMenuOpen }"
-        class="absolute top-14 left-0 w-full bg-white shadow-lg lg:static lg:block lg:shadow-none lg:w-auto">
+        class="absolute top-14 left-0 w-full shadow-lg lg:static lg:block lg:shadow-none lg:w-auto">
         <ul class="flex flex-col lg:flex-row lg:space-y-0 space-y-4 lg:space-x-12 font-semibold p-4 lg:p-0">
             <li><a href="#home" class="text-lg hover:text-green-800 hover:font-bold">Home</a></li>
-            <li><a href="#services" class="text-lg hover:text-green-800 hover:font-bold">Cardápio</a></li>
+            <li><a href="#menu" class="text-lg hover:text-green-800 hover:font-bold">Cardápio</a></li>
             <li><a href="#contact" class="text-lg hover:text-green-800 hover:font-bold">Contato</a></li>
             <li class="lg:hidden">
                 <button class="bg-green-800 text-white font-bold px-4 py-2 rounded hover:bg-green-600">
@@ -23,14 +23,50 @@
         </ul>
     </nav>
 
-    <div class="relative py-2 px-4 transition ease-in-out duration-300 hover:-translate-y-1">
-        <div class="t-0 absolute left-3">
-            <p class="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-3 text-xs text-white">3</p>
+    <div class="flex justify-center items-center space-x-5 mr-10">
+        <div class="relative py-2 transition ease-in-out duration-300 hover:-translate-y-1 px-4">
+            <div class="t-0 absolute left-3">
+                <p class="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-3 text-xs text-white">
+                    {{ cart.length }}
+                </p>
+            </div>
+            <button (click)="toggleCartDropdown()" class="relative">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="file: mt-4 h-8 w-8">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                </svg>
+            </button>
+            <div *ngIf="isCartDropdownOpen"
+                class="absolute right-0 mt-2 w-80 bg-white border border-gray-200 shadow-lg rounded-lg z-50">
+                <h3 class="text-lg font-bold p-4 border-b border-gray-200">Carrinho</h3>
+                <div *ngIf="cart.length === 0" class="p-4 text-gray-500 text-center">
+                    Seu carrinho está vazio.
+                </div>
+                <div *ngFor="let item of cart" class="flex items-center justify-between p-4 border-b border-gray-200">
+                    <div class="flex items-center space-x-4">
+                        <img [src]="item.pizzaImg.url" alt="{{ item.pizzaName }}"
+                            class="h-12 w-12 object-cover rounded-md">
+                        <div>
+                            <p class="text-sm font-medium">{{ item.pizzaName }}</p>
+                            <p class="text-sm text-gray-500">R${{ item.price.toFixed(2).replace('.', ',') }}</p>
+                        </div>
+                    </div>
+                    <button (click)="removeFromCart(item)" class="text-red-500 hover:text-red-700">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </div>
+                <div class="p-4 text-center">
+                    <button class="bg-green-800 text-white font-bold px-4 py-2 rounded hover:bg-green-600">
+                        Finalizar Pedido
+                    </button>
+                </div>
+            </div>
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-            class="file: mt-4 h-8 w-8">
-            <path stroke-linecap="round" stroke-linejoin="round"
-                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-        </svg>
+        <button
+            class="hidden md:block bg-green-800 transition ease-in-out duration-300 hover:bg-green-600 text-white font-bold px-2 h-12 rounded">
+            <i class="fa-solid fa-right-to-bracket"></i> Login
+        </button>
+
     </div>
 </header>
